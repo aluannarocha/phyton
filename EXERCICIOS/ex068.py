@@ -1,3 +1,6 @@
+
+
+
 '''Crie um programa que leia o nome, sexo e
 idade de várias pessoas, guardando cada
 dado num dicionário e todos os
@@ -10,19 +13,25 @@ d) Quantos homens com idade acima da média foram
 registados.'''
 
 pessoas = []   # lista para guardar vários dicionários
+dados = {}
 
 while True:
-    dados = {}   # dicionário para uma pessoa
+    dados['nome'] = input('Nome: ').strip()
+    while True:
+        dados['sexo'] = input('Sexo (M/F): ').upper().strip()
+        if dados['sexo'] != 'M' and dados['sexo'] != 'F':
+            print('Por favor introduza um sexo válido!')
+        else:
+            break
+    dados['idade'] = int(input('Idade: '))
 
-    dados["nome"] = input("Nome: ")
-    dados["sexo"] = input("Sexo (M/F): ").upper()
-    dados["idade"] = int(input("Idade: "))
-
-    pessoas.append(dados)   # guardar o dicionário na lista
+    pessoas.append(dados.copy())# guardar o dicionário na lista
+    dados.clear()
 
     continuar = input("Deseja continuar? (S/N): ").upper()
     if continuar == "N":
         break
+print(pessoas)
 
 # ----- Cálculos -----
 total_pessoas = len(pessoas)
@@ -42,8 +51,8 @@ for p in pessoas:
 
 # homens com idade acima da média
 homens_acima = 0
-for p in pessoas:
-    if p["sexo"] == "M" and p["idade"] > media_idades:
+for pessoa in pessoas:
+    if pessoa["sexo"] == "M" and pessoa["idade"] > media_idades:
         homens_acima += 1
 
 # ----- Resultados -----
