@@ -10,10 +10,20 @@ Saída:
 Olá mundo.
 -=-=-=-=-=-=-=-='''
 
-def cabecalho(texto):
+'''def cabecalho(texto):
 
     print('-='*20)
     print(f'{texto:-^40}')
     print('-='*20)
 
-cabecalho(input('Digite um texto: '))
+cabecalho(input('Digite um texto: '))'''
+
+
+def cabecalho(txt:str):
+    tamanho=len(txt)  + 8
+
+    print('-=' * int(tamanho / 2))
+    print(f'{txt:^{tamanho}}')
+    print('-=' * int(tamanho / 2))
+
+cabecalho(input('Digite uma mensagem: '))

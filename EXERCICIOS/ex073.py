@@ -4,16 +4,8 @@ valores inteiros. O programa deve
 analisar todos os valores e dizer qual
 deles é o maior.'''
 
+def maior(*valor: int):
+    maior_valor = max (valor)
+    print(f'O maior valor encontrado é {maior_valor}')
 
-def maior_valor(lista):
-    maior = lista[0]
-
-    for n in lista:
-        if n > maior:
-            maior = n
-
-    print("O maior valor é:", maior)
-
-# Programa principal
-numeros = [3, 8, 1, 10, 5]
-maior_valor(numeros)
+maior(3,2,1,1,3,5,8,9,0)

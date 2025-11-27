@@ -8,9 +8,9 @@ tabuada desse número.'''
 
 numero = int(input("Digite um número inteiro: "))
 
-def tabuada(n):
-    print(f"Tabuada do {n}:")
-    for i in range (1,11):
-        print(n, 'x' ,i, '=' ,n * i)
+def tabuada(num:int):
+    print(f"Tabuada do {num}:")
+    for c in range (1,11):
+        print(f'{num} x {c} = {c* num}')
 
 tabuada(numero)
