@@ -168,7 +168,7 @@ while True:
 
     elif opcao == 5: # apaga todas as notas num ficheiro
         titulo_ficheiro = input('Qual o ficheiro que quer apagar?\n--> ')
-        existe = verifica_existencia(titulo_ficheiro)
+        existe = verifica_existencia(titul 5ro_ficheiro)
         if existe:
             apagar_nota(titulo_ficheiro)
 
