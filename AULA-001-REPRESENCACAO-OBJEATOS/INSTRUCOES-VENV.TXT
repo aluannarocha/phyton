@@ -1,0 +1,10 @@
+1- CRTL + J ->abrir o terminal
+2- Escrever: phyton3 -m venv venv
+(primeiro venv é a biblioteca, o segundo venv é o nome da pasta)
+3- Com a pasta criada: source venv/bin/activate
+
+agora devemos ter (venv) no inicio da linha do terminal
+
+criar ficheiro com os requirements do projeto
+é uma lista das dependencias necessárias
+pip freeze > requirements.txt
