@@ -11,13 +11,43 @@ class Conta:
                 f'titular: {self.__titular}\n'
                 f'Limite: {self.__nib}')
 
+    # --- TITULAR ---
+    @property
+    def titular(self):
+        return self.__titular
 
+    @titular.setter
+    def titular(self, novo_titular):
+        self.__titular = novo_titular
 
-*******
+    # --- SALDO ---
+    @property
+    def saldo(self):
+        return self.__saldo
+
+    @saldo.setter
+    def saldo(self, novo_saldo):
+        self.__saldo = novo_saldo
+
+    # --- NIB ---
+    @property
+    def nib(self):
+        return self.__nib
+
+    # --- LIMITE ---
+    @property
+    def limite(self):
+        return self.__limite
+
+    @limite.setter
+    def limite(self, novo_limite):
+        if novo_limite < 0:
+            print("Erro: O limite não pode ser negativo.")
+        else:
+            self.__limite = novo_limite
 
     def obter_comprovativo(self):
-    # dar o nome ao ficheiro
-    nome_arquivo = f'{self.__titular}-comprovativo-nib.pdf
+    nome_arquivo = f'{self.__titular.lower()}-comprovativo-nib.pdf'
 
     # criar a variável que representa uma folha do pdf
     c = canvas.Canvas (nome_arquivo)

@@ -4,7 +4,7 @@ from src.entities.conta import Conta
 
 os.system('clear')
 
-nova_conta = Conta('Ricardi', 250000.01, 'PT50123456789', 400)
+nova_conta = Conta('Ricardo', 250000.01, 'PT50123456789', 400)
 
 print(nova_conta)
 
