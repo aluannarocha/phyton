@@ -1,4 +1,6 @@
 import time
+
+
 print('---Boas vindas!!!---')
 time.sleep(1)
 print('Faça o seu registo!')
