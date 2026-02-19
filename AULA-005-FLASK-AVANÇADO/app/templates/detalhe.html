@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ p.nome}}</title>
+</head>
+<body>
+    <a href=" {{ url_for('mostra_produtos') }}">Ver catálogo</a>
+
+    <hr>    
+    <div style="border: 1px solid black; max-width: 500px; margin: 0 auto; padding: 50px;"
+    
+    <h1> {{ p.nome }}</h1>
+    <img src = "{{ p.imagem}}" width="400">
+    <h2>Preço: {{ p.preco }}</h2>
+    <p>Descrição: {{p.descricao}}</p>
+    {% if p.stock == 0%}
+    
+    ></div>
+
+
+</body>
+</html>

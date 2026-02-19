@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TechNova Security</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
+
+  <!-- Meta -->
+  <meta name="description" content="TechNova Security — proteção de dados, auditoria e resposta a incidentes.">
+  <meta property="og:title" content="TechNova Security">
+  <meta property="og:description" content="Protegemos o que mais importa: os seus dados.">
+  <meta property="og:image" content="image/logo-technova.png">
+  <meta property="og:type" content="website">
+
+  <!-- CSS -->
+  <style>
+    :root {
+      --blue: #1E4E79;
+      --blue-aux: #4BA3C3;
+      --green: #00A676;
+      --charcoal: #2B2B2B;
+      --bg: rgba(202, 202, 251, 0.494);
+      --muted: #f3f5f7;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--charcoal);
+      background: var(--bg);
+    }
+
+    /* NAV */
+    .tn-nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .tn-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 18px;
+      color: var(--blue)
+    }
+
+    .tn-icon {
+      width: 34px;
+      height: 34px
+    }
+
+    .tn-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px
+    }
+
+    .tn-link {
+      color: var(--charcoal);
+      text-decoration: none;
+      padding: 8px 10px
+    }
+
+    .tn-link:hover {
+      opacity: .85
+    }
+
+    /* BUTTONS */
+    .tn-btn {
+      padding: 9px 14px;
+      border-radius: 10px;
+      border: 0;
+      background: var(--blue);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600
+    }
+
+    .tn-btn:hover {
+      filter: brightness(1.05)
+    }
+
+    .tn-btn--outline {
+      background: transparent;
+      border: 2px solid var(--blue);
+      color: var(--blue)
+    }
+
+    .tn-btn--ghost {
+      background: transparent;
+      border: 1px solid #d0d7de;
+      color: var(--charcoal)
+    }
+
+    .tn-btn--lg {
+      padding: 12px 18px
+    }
+
+    /* HERO */
+    .tn-hero {
+      background: linear-gradient(180deg, #f8fbff, transparent)
+    }
+
+    .tn-hero__inner {
+      max-width: 1100px;
+      margin: 10px auto 40px;
+      display: grid;
+      gap: 30px;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .tn-hero__copy h1 {
+      font-size: 44px;
+      line-height: 1.1;
+      margin: 0 0 10px
+    }
+
+    .tn-hero__copy p {
+      font-size: 17px;
+      color: #4a5568;
+      margin: 0 0 16px
+    }
+
+    .tn-cta {
+      display: flex;
+      gap: 12px;
+      margin: 12px 0 16px
+    }
+
+    .tn-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+      color: #334155
+    }
+
+    .tn-bullets li {
+      margin: 6px 0;
+      position: relative;
+      padding-left: 18px
+    }
+
+    .tn-bullets li::before {
+      content: "•";
+      color: var(--green);
+      position: absolute;
+      left: 0
+    }
+
+    /* HERO ART + BADGES (fix alinhamento) */
+    .tn-hero__art {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 320px;
+    }
+
+    /* bloco de badges ancorado à direita do logo */
+    .tn-badges {
+      position: absolute;
+      top: 50%;
+      right: clamp(0px, 6vw, 48px);
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .tn-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 8px 12px;
+      font-size: 13px;
+      color: #334155;
+      box-shadow: 0 6px 18px rgba(30, 78, 121, .12);
+      white-space: nowrap;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-right: 6px
+    }
+
+    .dot--ok {
+      background: var(--green)
+    }
+
+    .dot--warn {
+      background: #f59e0b
+    }
+
+    .dot--info {
+      background: var(--blue-aux)
+    }
+
+    /* SECTIONS */
+    .tn-section {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px
+    }
+
+    .tn-section h2 {
+      font-size: 28px;
+      margin: 0 0 14px;
+      color: var(--blue)
+    }
+
+    .tn-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(3, 1fr)
+    }
+
+    .tn-tile {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 16px
+    }
+
+    .tn-tile h3 {
+      margin: 0 0 6px
+    }
+
+    .tn-section--alt {
+      background: var(--muted);
+      padding: 24px;
+      border-radius: 16px
+    }
+
+    /* FOOTER */
+    .tn-footer {
+      margin-top: 40px;
+      padding: 16px;
+      text-align: center;
+      font-size: 13px;
+      color: #64748b;
+      border-top: 1px solid #e5e7eb;
+      background: #fafbfc
+    }
+
+    /* RESPONSIVO */
+    @media (max-width:900px) {
+      .tn-hero__inner {
+        grid-template-columns: 1fr
+      }
+
+      .tn-actions {
+        display: none
+      }
+
+      .tn-hero__copy h1 {
+        font-size: 36px
+      }
+
+      .tn-badges {
+        position: static;
+        transform: none;
+        margin-top: 14px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .tn-card {
+        font-size: 12px
+      }
+
+      .tn-grid {
+        grid-template-columns: 1fr
+      }
+    }
+  </style>
+
+</head>
+<header class="tn-hero">
+  <nav class="tn-nav">
+    <div class="tn-brand">
+      <img src="image/icon-technova.png" alt="Escudo TechNova" class="tn-icon">
+      <span>TechNova <strong>Security</strong></span>
+    </div>
+    <div class="tn-actions">
+      <a href="" class="tn-link">Início</a>
+      <a href="" class="tn-btn tn-btn--outline">Serviços</a>
+      <a href="" class="tn-btn">Contacto</a>
+    </div>
+  </nav>
+
+  <div class="tn-hero__inner">
+    <div class="tn-hero__copy">
+      <h1>Protegemos os seus <span class="tn-grad">dados</span>.</h1>
+      <p>Auditoria, conformidade e resposta a incidentes — soluções objetivas para reduzir risco e aumentar confiança.
+      </p>
+      <div class="tn-cta">
+        <a href="#orcamento" class="tn-btn tn-btn--lg">Começar agora</a>
+        <a href="#servicos" class="tn-btn tn-btn--ghost">Ver serviços</a>
+      </div>
+      <ul class="tn-bullets">
+        <li>PKI, IAM, DLP e hardening</li>
+        <li>Pentests e Red Team</li>
+        <li>Formação e sensibilização</li>
+      </ul>
+    </div>
+
+    <div class="tn-hero__art">
+      <div class="tn-badges">
+        <div class="tn-card"><span class="dot dot--ok"></span> Encriptação ativa</div>
+        <div class="tn-card"><span class="dot dot--warn"></span> Monitorização 24/7</div>
+        <div class="tn-card"><span class="dot dot--info"></span> Conformidade RGPD</div>
+      </div>
+    </div>
+
+</header>
+
+<section id="servicos" class="tn-section">
+  <h2>Serviços</h2>
+  <div class="tn-grid">
+    <article class="tn-tile">
+      <h3>Pentest</h3>
+      <p>Testes de intrusão a apps, APIs e infra.</p>
+    </article>
+    <article class="tn-tile">
+      <h3>Blue Team</h3>
+      <p>SIEM, alertas e playbooks de resposta.</p>
+    </article>
+    <article class="tn-tile">
+      <h3>Governança</h3>
+      <p>Políticas, auditorias e frameworks.</p>
+    </article>
+  </div>
+</section>
+
+<section id="contactos" class="tn-section tn-section--alt">
+  <h2>Fale connosco</h2>
+  <p>Resposta em menos de 24h. Email: <a href="mailto:contacto@technova.example">contacto@technova.example</a></p>
+</section>
+<footer class="tn-footer">
+  <div>2025 TechNova Security © — Todos os direitos reservados.</div>
+</footer>
+</body>
+
+</html>
